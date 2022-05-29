@@ -2,16 +2,13 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '28.0.3'
 
     defaultConfig {
         minSdkVersion 28
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
         externalNativeBuild {
             ndkBuild {
-                abiFilters "armeabi-v7a", "x86"
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
             }
         }
     }
@@ -26,19 +23,20 @@ android {
             path file("src/main/jni/Android.mk")
         }
     }
-    lintOptions {
-        //IJobService need NewApi
-        warning 'NewApi','OnClick'
-    }
-	
-	sourceSets {
+
+    sourceSets {
 		main {
 			java.srcDirs=['src/main/java','src/main/aidl']
 		}
 	}
+
+    ndkVersion "17.2.4988734"
+    lint {
+        warning 'NewApi', 'OnClick'
+    }
 }
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 }

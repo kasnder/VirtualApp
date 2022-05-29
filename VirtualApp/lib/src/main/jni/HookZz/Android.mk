@@ -25,6 +25,9 @@ else ifeq ($(TARGET_ARCH), arm64)
 else ifeq ($(TARGET_ARCH), x86)
 	ZZ_SRC += $(wildcard $(LOCAL_PATH)/src/platforms/arch-x86/*.c) \
 			$(wildcard $(LOCAL_PATH)/src/platforms/backend-x86/*.c)
+else ifeq ($(TARGET_ARCH), x86_64)
+	ZZ_SRC += $(wildcard $(LOCAL_PATH)/src/platforms/arch-x86_64/*.c) \
+			$(wildcard $(LOCAL_PATH)/src/platforms/backend-x86_64/*.c)
 endif
 
 LOCAL_MODULE := hookzz

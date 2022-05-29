@@ -228,7 +228,7 @@ public class RippleButton extends AppCompatButton {
             return;
         }
 
-        canvas.save(Canvas.CLIP_SAVE_FLAG);
+        canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
 
         mPath.reset();
         mPath.addCircle(mDownX, mDownY, mRadius, Path.Direction.CW);

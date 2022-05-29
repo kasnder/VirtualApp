@@ -8,7 +8,7 @@ LOCAL_CFLAGS += -fno-rtti -fno-exceptions
 
 LOCAL_C_INCLUDES += $(MAIN_LOCAL_PATH)
 
-LOCAL_SRC_FILES := Bypass.cpp
+#LOCAL_SRC_FILES := Bypass.cpp
 
 LOCAL_LDLIBS := -llog -latomic
 LOCAL_STATIC_LIBRARIES := fb
